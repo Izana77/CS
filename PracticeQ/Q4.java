@@ -1,28 +1,37 @@
 package q;
 
+import java.util.ArrayList;
+
 public class Q4 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		IsRightAngled(3, 4, 5);
-	}
-	public static int IsRightAngled(int a, int b, int c) {
-	    if (a < 5 || a > 30 || b < 5 || b > 30 || c < 5 || c > 30) {
-	        return -2;
-	    }
+public static ArrayList<Double> CToF(ArrayList<String> C) {
+    if (C == null || C.isEmpty()) {
+        return null;
+    }
 
-	    int a2 = a * a;
-	    int b2 = b * b;
-	    int c2 = c * c;
+    for (String s : C) {
+        if (s == null || s.isEmpty()) {
+            return null;
+        }
+    }
 
-	    if (a2 + b2 == c2 || a2 + c2 == b2 || b2 + c2 == a2) {
-	        return 1;
-	    }
+    ArrayList<Double> answer = new ArrayList<>();
 
-	    return 0;
-	}
+    try {
+        for (String s : C) {
+            double c = Double.parseDouble(s.trim());
+            double f = (c * 9.0 / 5.0) + 32.0;
+            answer.add(f);
+        }
+    } catch (NumberFormatException e) {
+        return new ArrayList<>();
+    }
+
+    return answer;
+}
 
 
 }
+
 
 
