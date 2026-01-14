@@ -1,0 +1,13 @@
+package q;
+
+public class Q1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BMI(70, 1.75);
+	}
+	public static double BMI(double w, double h) {
+	    return w / (h * h);
+	}
+
+}
